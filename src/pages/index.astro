@@ -1,10 +1,44 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import HeroVisual from '../pages/HeroVisual.astro';
+import Navbar from '../components/Navbar.astro';
+
+// Importando os componentes (que antes eram páginas)
+import HeroVisual from '../components/HeroVisual.astro';
+import About from '../components/About.astro';
+import Stack from '../components/Stack.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
 ---
 
-<Layout title="Gustavo Lara">
-	<main>
-		<HeroVisual />
-	</main>
+<Layout title="Gustavo | Portfólio">
+    <Navbar /> 
+    
+    <main>
+        <section id="home">
+            <HeroVisual />
+        </section>
+
+        <section id="about">
+            <About />
+        </section>
+
+        <section id="stack">
+            <Stack />
+        </section>
+
+        <section id="projects">
+            <Projects />
+        </section>
+
+        <section id="contact">
+            <Contact />
+        </section>
+    </main>
 </Layout>
+
+<style>
+    section {
+        padding-top: 80px;
+        min-height: 100vh;
+    }
+</style>
