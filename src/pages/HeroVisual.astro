@@ -1,7 +1,74 @@
 ---
-import "./styles/HeroVisual.css"
+import "./styles/HeroVisual.css";
+import { Image } from "astro:assets";
+import Avatar from "./assets/avatarGustavo.png";
 ---
 
-<section class="hero">
-    <p>HeroSection</p>
+<section id="home" class="hero-section">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <div class="container hero-container">
+        <div class="hero-content">
+            <!-- <div class="badge">
+                <span class="status-dot"></span> Available for work
+            </div> -->
+
+            <h1>
+                FULLSTACK <br />
+                <span class="text-gradient">DEVELOPER</span>
+            </h1>
+
+            <p class="description">
+                Construindo soluções digitais de ponta a ponta. Do backend
+                robusto à interface imersiva, com foco absoluto em performance e
+                experiência do usuário.
+            </p>
+
+            <div class="cta-group">
+                <a href="/Projects" class="btn btn-primary"> Ver Projetos </a>
+                <a
+                    href="https://github.com/gustavo-lara"
+                    target="_blank"
+                    class="btn btn-secondary"
+                >
+                    GitHub_
+                </a>
+            </div>
+
+            <div class="mini-stack">
+                <span>PHP</span>
+                <span class="separator">/</span>
+                <span>C#</span>
+                <span class="separator">/</span>
+                <span>TypeScript</span>
+                <span class="separator">/</span>
+                <span>JavaScript</span>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="glass-card">
+                <div class="image-wrapper">
+                    <Image src={Avatar} alt="Gustavo Avatar" />
+                    <div class="scan-line"></div>
+                </div>
+
+                <div class="card-info">
+                    <div class="info-row">
+                        <span class="label">NAME</span>
+                        <span class="value">Gustavo Menegassi Lara</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">LOC</span>
+                        <span class="value">Brazil</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">UPTIME</span>
+                        <span class="value">99.9%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

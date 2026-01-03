@@ -134,7 +134,7 @@
   cursor: pointer;
   flex-direction: column;
   gap: 6px;
-  z-index: 10;
+  z-index: 2010;
   padding: 5px;
 }
 
@@ -146,7 +146,7 @@
   box-shadow: 0 0 5px rgba(0, 243, 255, 0.5);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 968px) {
   #menu-toggle {
     display: flex;
   }
