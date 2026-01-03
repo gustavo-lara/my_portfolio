@@ -9,9 +9,9 @@ import "./styles/Navbar.css";
         </a>
 
         <nav class="nav-links">
-            <a href="/" class="nav-item">Home</a>
-            <a href="/Projects" class="nav-item">Projects</a>
-            <a href="/About" class="nav-item">About</a>
+            <a href="/About" class="nav-item">[ About Me ]</a>
+            <a href="/Stacks" class="nav-item">[ Stacks ]</a>
+            <a href="/Projects" class="nav-item">[ Projects ]</a>
             <a href="/Contact" class="nav-item highlight">Contact</a>
         </nav>
 
@@ -31,6 +31,9 @@ import "./styles/Navbar.css";
         menuBtn.addEventListener("click", () => {
             navLinks.classList.toggle("active");
             menuBtn.classList.toggle("active");
+            document.body.style.overflow = navLinks.classList.contains("active")
+                ? "hidden"
+                : "auto";
         });
 
         const links = document.querySelectorAll(".nav-item");
@@ -38,6 +41,7 @@ import "./styles/Navbar.css";
             link.addEventListener("click", () => {
                 navLinks.classList.remove("active");
                 menuBtn.classList.remove("active");
+                document.body.style.overflow = "auto";
             });
         });
     }
