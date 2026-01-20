@@ -1,12 +1,112 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import "./../styles/About.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import "../styles/About.css";
 ---
 
-<Layout title="about">
-    <main>
-        <section class="about">
-            <p>About</p>
-        </section>
-    </main>
-</Layout>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<title>About Me | Gustavo Lara</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<Navbar />
+
+		<section class="about-section">
+            <div class="ambient-glow glow-purple"></div>
+            <div class="ambient-glow glow-cyan"></div>
+
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">ABOUT ME</h1>
+                    <div class="title-decoration"></div>
+                </div>
+
+                <div class="about-grid">
+                    
+                    <div class="terminal-wrapper">
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <div class="terminal-controls">
+                                    <span class="control close"></span>
+                                    <span class="control minimize"></span>
+                                    <span class="control maximize"></span>
+                                </div>
+                                <div class="terminal-tab">profile.json</div>
+                            </div>
+                            <div class="terminal-body">
+                                <span class="code-line"><span class="keyword">const</span> <span class="string">developer</span> = &#123;</span>
+                                <span class="code-line">&nbsp;&nbsp;name: <span class="string">"Gustavo Menegassi Lara"</span>,</span>
+                                <span class="code-line">&nbsp;&nbsp;age: <span class="number">19</span>,</span>
+                                <span class="code-line">&nbsp;&nbsp;location: <span class="string">"Jaú, SP"</span>,</span>
+                                <span class="code-line">&nbsp;&nbsp;stack: [<span class="string">"Fullstack"</span>, <span class="string">"DevOps"</span>]</span>
+                                <span class="code-line">&#125;;</span>
+                                <br>
+                                <span class="code-line comment">// "Building systems that scale."</span>
+                            </div>
+                        </div>
+
+                        <div class="certs-container">
+                            <h3 class="section-label">[CERTIFICATES]</h3>
+                            
+                            <div class="chips-grid">
+                                <div class="data-chip">
+                                    <div class="chip-main">
+                                        <span class="chip-title">Azure Fundamentals</span>
+                                        <span class="chip-id">Microsoft :: AZ-900</span>
+                                    </div>
+                                    <span class="chip-status">VERIFIED</span>
+                                </div>
+
+                                <div class="data-chip">
+                                    <div class="chip-main">
+                                        <span class="chip-title">Azure AI Fundamentals</span>
+                                        <span class="chip-id">Microsoft :: AI-900</span>
+                                    </div>
+                                    <span class="chip-status">VERIFIED</span>
+                                </div>
+
+                                <div class="data-chip">
+                                    <div class="chip-main">
+                                        <span class="chip-title">Data Modeling</span>
+                                        <span class="chip-id">Fundação Bradesco</span>
+                                    </div>
+                                    <span class="chip-status">VERIFIED</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-wrapper">
+                        <h3 class="section-label">[EDUCATION]</h3>
+
+                        <div class="timeline-card">
+                            <span class="timeline-date">2026 — PRESENT</span>
+                            <div class="timeline-head">
+                                <h4>Higher Education in Systems Development</h4>
+                                <span>UNOESTE</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-card">
+                            <span class="timeline-date">COMPLETED</span>
+                            <div class="timeline-head">
+                                <h4>Systems Development Technician</h4>
+                                <span>SENAI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+		</section>
+
+		<Footer />
+	</body>
+</html>
