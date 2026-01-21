@@ -130,7 +130,7 @@
 
 .code-line {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 
 .keyword { color: var(--neon-purple); }
