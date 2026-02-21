@@ -1,0 +1,290 @@
+.contact-section {
+    position: relative;
+    padding: 120px 0;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    background-image: 
+        linear-gradient(rgba(10, 10, 15, 0.95), rgba(10, 10, 15, 0.98)),
+        linear-gradient(0deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    overflow: hidden;
+}
+
+.ambient-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.12;
+    z-index: 0;
+    pointer-events: none;
+    animation: pulse-glow 8s ease-in-out infinite;
+}
+
+.glow-purple { top: -10%; right: -10%; background: var(--neon-purple); }
+.glow-cyan { bottom: -10%; left: -10%; background: var(--neon-cyan); animation-delay: 4s; }
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 10;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    display: inline-block;
+    color: var(--text-main);
+}
+
+.title-decoration {
+    display: block;
+    height: 2px;
+    width: 60px;
+    background: var(--neon-purple);
+    margin: 10px auto 0;
+    box-shadow: 0 0 10px var(--neon-purple);
+}
+
+/* --- GRID DE CONTATO (Duas Colunas) --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    position: relative;
+    z-index: 10;
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Coluna da Esquerda (Informações) */
+.contact-info-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-title {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.info-desc {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.method-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.method-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 243, 255, 0.05);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    border-radius: 12px;
+    color: var(--neon-cyan);
+}
+
+.method-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.method-label {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.method-value {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.social-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--text-main);
+    margin-bottom: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-links-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Coluna da Direita (Formulário Glassmorphism) */
+.glass-form {
+    background: rgba(19, 17, 28, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.input-group input,
+.input-group textarea {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: var(--text-main);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.input-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    border: 1px solid var(--neon-purple);
+    color: var(--text-main);
+    padding: 16px;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--neon-purple);
+    transition: width 0.3s ease;
+    z-index: 1;
+}
+
+.submit-btn span,
+.submit-btn svg {
+    position: relative;
+    z-index: 2;
+}
+
+.submit-btn:hover::before {
+    width: 100%;
+}
+
+.submit-btn:hover {
+    box-shadow: 0 0 20px rgba(188, 19, 254, 0.4);
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 968px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+    .glass-form { padding: 1.5rem; }
+}
