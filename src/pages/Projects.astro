@@ -1,12 +1,184 @@
----
-import Layout from "../layouts/Layout.astro";
-import "./../styles/Projects.css";
+<!-- ---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import "../styles/Projects.css";
+
+const projects = [
+    {
+        title: "UP! Talentos",
+        category: "WordPress Plugin",
+        description: "Plugin customizado desenvolvido do zero para gestão de talentos. Conta com arquitetura refatorada para separação de painéis e responsabilidades entre 'Empresa' e 'Recrutador', com interações seguras de banco de dados.",
+        techs: ["PHP", "WordPress", "MySQL", "JavaScript"],
+        githubLink: "#", // Substitua pelo seu link
+        liveLink: "#",   // Substitua pelo seu link
+        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        color: "var(--neon-purple)"
+    },
+    {
+        title: "Personal Portfolio",
+        category: "Frontend & UI/UX",
+        description: "Portfólio interativo construído com Astro, focado em alta performance estática. O design aplica princípios de engenharia cognitiva para reduzir a carga cognitiva do usuário através de um layout limpo e navegação fluida.",
+        techs: ["Astro", "HTML5", "CSS3", "JavaScript"],
+        githubLink: "#",
+        liveLink: "#",
+        image: "https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        color: "var(--neon-cyan)"
+    },
+    {
+        title: "Enterprise API Architecture",
+        category: "Backend Services",
+        description: "Desenvolvimento e estruturação de uma API robusta com C# e .NET. Foco em arquitetura limpa, consultas otimizadas no SQL Server e conteinerização do ambiente com Docker para facilitar o deploy e desenvolvimento local.",
+        techs: ["C#", ".NET", "SQL Server", "Docker"],
+        githubLink: "#",
+        liveLink: "",
+        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        color: "#ffbd2e"
+    },
+    {
+        title: "Automated Workflow Bots",
+        category: "RPA & Automation",
+        description: "Automação de processos complexos de negócios utilizando UiPath. Criação de fluxos que interagem com interfaces web e sistemas desktop, eliminando tarefas repetitivas e aumentando a eficiência operacional.",
+        techs: ["UiPath", "RPA", "Regex"],
+        githubLink: "#",
+        liveLink: "",
+        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        color: "#ff007f"
+    }
+];
 ---
 
-<Layout title="projects">
-    <main>
-        <section class="projects">
-            <p>Projects</p>
+<html lang="pt-br">  
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Projects | Gustavo Lara</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Syne:wght@700;800&family=Fira+Code&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <Navbar />
+        <section class="projects-section">
+            <div class="ambient-glow glow-purple"></div>
+            <div class="ambient-glow glow-cyan"></div>
+
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">PROJECTS</h1>
+                    <div class="title-decoration"></div>
+                </div>
+
+                <div class="projects-grid">
+                    {
+                        projects.map((project, index) => (
+                            <div 
+                                class="project-card" 
+                                style={`--card-color: ${project.color}; animation-delay: ${index * 150}ms`}
+                            >
+                                <div class="project-image-wrapper">
+                                    <img src={project.image} alt={project.title} class="project-image" loading="lazy" />
+                                    <div class="image-overlay"></div>
+                                    <span class="project-category">[{project.category}]</span>
+                                </div>
+                                
+                                <div class="project-content">
+                                    <h2 class="project-title">{project.title}</h2>
+                                    <p class="project-desc">{project.description}</p>
+                                    
+                                    <div class="tech-tags">
+                                        {project.techs.map((tech) => (
+                                            <span class="tech-tag">{tech}</span>
+                                        ))}
+                                    </div>
+                                    
+                                    <div class="project-links">
+                                        {project.githubLink && (
+                                            <a href={project.githubLink} target="_blank" rel="noopener noreferrer" class="btn-link">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                                Source
+                                            </a>
+                                        )}
+                                        {project.liveLink && (
+                                            <a href={project.liveLink} target="_blank" rel="noopener noreferrer" class="btn-link primary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                                Live View
+                                            </a>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
         </section>
-    </main>
-</Layout>
+        <Footer />
+    </body>
+</html> -->
+
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import "../styles/Projects.css";
+---
+
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Projects | Gustavo Lara</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Syne:wght@700;800&family=Fira+Code&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <Navbar />
+
+        <section class="projects-section">
+            <div class="ambient-glow glow-purple"></div>
+            <div class="ambient-glow glow-cyan"></div>
+
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">PROJECTS</h1>
+                    <div class="title-decoration"></div>
+                </div>
+
+                <div class="coming-soon-wrapper">
+                    <div class="terminal-window coming-soon-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control maximize"></span>
+                            </div>
+                            <div class="terminal-tab">deploy.sh</div>
+                        </div>
+                        <div class="terminal-body">
+                            <span class="code-line"><span class="user-path">gustavo@portfolio:~/projects$</span> ./fetch_repositories.sh</span>
+                            <span class="code-line system-msg">Connecting to the servers... [OK]</span>
+                            <span class="code-line system-msg">Compiling source code...</span>
+                            <div class="progress-container">
+                                <span class="progress-bar"></span>
+                                <span class="progress-text">Loading...</span>
+                            </div>
+                            <span class="code-line accent-text">&gt;&gt;&gt; STATUS: Coming soon... &lt;&lt;&lt;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <Footer />
+    </body>
+</html>
