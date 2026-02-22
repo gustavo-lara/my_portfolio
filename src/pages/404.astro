@@ -1,0 +1,50 @@
+---
+import "../styles/global.css";
+import "../styles/404.css";
+---
+
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <title>404 | System Error</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Syne:wght@700;800&family=Fira+Code&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <main class="error-fullscreen">
+            <div class="ambient-glow glow-purple"></div>
+            <div class="ambient-glow glow-cyan"></div>
+
+            <div class="bg-404">404</div>
+
+            <div class="content-wrapper">
+                <h1 class="error-headline">
+                    Page not <span class="highlight">found.</span>
+                </h1>
+                <p class="error-description">
+                    It looks like you accessed a non-existent route or the link
+                    is broken. Don't worry, the main system is still
+                    operational.
+                </p>
+
+                <div class="action-group">
+                    <a href="/" class="primary-return-btn">
+                        Home
+                    </a>
+                </div>
+            </div>
+
+            <div class="system-status">
+                <span>SYS_STATUS: OFFLINE</span>
+                <span class="divider">|</span>
+                <span>SECTOR: NULL</span>
+            </div>
+        </main>
+    </body>
+</html>
