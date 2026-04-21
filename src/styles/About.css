@@ -2,12 +2,6 @@
     position: relative;
     padding: 120px 0;
     min-height: 100vh;
-    overflow: hidden;
-    background-image: 
-        linear-gradient(rgba(10, 10, 15, 0.9), rgba(10, 10, 15, 0.95)),
-        linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(0deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
-    background-size: 100% 100%, 40px 40px, 40px 40px;
 }
 
 .ambient-glow {

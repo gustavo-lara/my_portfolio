@@ -1,3 +1,41 @@
+html {
+  scroll-behavior: auto !important; /* Managed by Lenis */
+  overflow-x: hidden;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+body {
+  background-color: var(--bg-dark);
+  background-image: 
+      linear-gradient(rgba(10, 10, 15, 0.9), rgba(10, 10, 15, 0.95)),
+      linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+  background-attachment: fixed; /* Keep core background fixed */
+  color: var(--text-main);
+  font-family: var(--font-body);
+  overflow-x: hidden; 
+}
+
 :root {
   
   --bg-dark: #0a0a0f;      
@@ -19,13 +57,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-body {
-  background-color: var(--bg-dark);
-  color: var(--text-main);
-  font-family: var(--font-body);
-  overflow-x: hidden; 
 }
 
 .container {

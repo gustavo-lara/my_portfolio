@@ -1,10 +1,609 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import HeroVisual from '../pages/HeroVisual.astro';
+import HeroVisual from '../components/HeroVisual.astro';
+import antigravityIcon from '../assets/antigravity.svg';
+
+// Styles
+import "../styles/About.css";
+import "../styles/Stacks.css";
+import "../styles/Projects.css";
+import "../styles/Contact.css";
+
+// Data
+const techStack = {
+    languages: [
+        {
+            name: "C#",
+            role: "Backend Core",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+        },
+        {
+            name: "PHP",
+            role: "Server Scripting",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+        },
+        {
+            name: "TypeScript",
+            role: "Typed Superset",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+        },
+        {
+            name: "JavaScript",
+            role: "Web Interactive",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+        },
+        {
+            name: "SQL",
+            role: "Query Language",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg",
+        },
+        {
+            name: "HTML5",
+            role: "Structure",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+        },
+        {
+            name: "CSS3",
+            role: "Style Sheet",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+        },
+    ],
+    frameworks: [
+        {
+            name: ".NET",
+            role: "App Framework",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
+        },
+        {
+            name: "NestJS",
+            role: "Node Framework",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg",
+        },
+        {
+            name: "React",
+            role: "UI Library",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        },
+        {
+            name: "Astro",
+            role: "Static Framework",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/astro/astro-original.svg",
+        },
+        {
+            name: "Tailwind",
+            role: "Utility CSS",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+        },
+        {
+            name: "Bootstrap",
+            role: "UI Kit",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+        },
+        {
+            name: "Node.js",
+            role: "Runtime Env",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+        },
+    ],
+    tools: [
+        {
+            name: "Visual Studio",
+            role: "Integrated IDE",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg",
+        },
+        {
+            name: "VS Code",
+            role: "Code Editor",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+        },
+        {
+            name: "Antigravity",
+            role: "AI Code Editor",
+            icon: antigravityIcon.src,
+        },
+        {
+            name: "MySQL Workbench",
+            role: "Database GUI",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+        },
+        {
+            name: "Git",
+            role: "Version Control",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+        },
+        {
+            name: "Docker",
+            role: "Containerization",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+        },
+        {
+            name: "XAMPP",
+            role: "Local Web Server",
+            icon: "https://cdn.simpleicons.org/xampp/FB792B",
+        },
+        {
+            name: "Figma",
+            role: "Prototyping",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+        },
+        {
+            name: "WordPress",
+            role: "CMS & Plugin Dev",
+            icon: "https://skillicons.dev/icons?i=wordpress",
+        },
+    ],
+    automation: [
+        {
+            name: "UiPath",
+            role: "RPA Development",
+            icon: "https://cdn.simpleicons.org/uipath/FA4616",
+        },
+        {
+            name: "n8n",
+            role: "Workflow Automation",
+            icon: "https://cdn.simpleicons.org/n8n/EA526F",
+        },
+    ],
+};
 ---
 
 <Layout title="Gustavo Lara">
 	<main>
 		<HeroVisual />
+
+        <!-- About Me Section -->
+        <section id="about" class="about-section">
+            <div class="ambient-glow glow-purple"></div>
+            <div class="ambient-glow glow-cyan"></div>
+
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">ABOUT ME</h1>
+                    <div class="title-decoration"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="terminal-wrapper">
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <div class="terminal-controls">
+                                    <span class="control close"></span>
+                                    <span class="control minimize"></span>
+                                    <span class="control maximize"></span>
+                                </div>
+                                <div class="terminal-tab">profile.json</div>
+                            </div>
+                            <div class="terminal-body">
+                                <span class="code-line"
+                                    ><span class="keyword">const</span>
+                                    <span class="string">developer</span> = &#123;</span
+                                >
+                                <span class="code-line"
+                                    >&nbsp;&nbsp;name: <span class="string"
+                                        >"Gustavo Menegassi Lara"</span
+                                    >,</span
+                                >
+                                <span class="code-line"
+                                    >&nbsp;&nbsp;age: <span class="number"
+                                        >19</span
+                                    >,</span
+                                >
+                                <span class="code-line"
+                                    >&nbsp;&nbsp;location: <span class="string"
+                                        >"Jaú, SP"</span
+                                    >,</span
+                                >
+                                <span class="code-line"
+                                    >&nbsp;&nbsp;stack: [<span class="string"
+                                        >"Fullstack"</span
+                                    >, <span class="string">"DevOps"</span
+                                    >]</span
+                                >
+                                <span class="code-line comment"
+                                    >// "Building systems that scale."</span>
+                            </div>
+                        </div>
+
+                        <div class="certs-container">
+                            <h3 class="section-label">[CERTIFICATES]</h3>
+
+                            <div class="chips-grid">
+                                <div class="data-chip">
+                                    <div class="chip-main">
+                                        <span class="chip-title"
+                                            >Azure Fundamentals AZ-900</span
+                                        >
+                                        <span class="chip-id"
+                                            >Microsoft</span
+                                        >
+                                    </div>
+                                    <span class="chip-status">VERIFIED</span>
+                                </div>
+
+                                <div class="data-chip">
+                                    <div class="chip-main">
+                                        <span class="chip-title"
+                                            >Azure AI Fundamentals AI-900</span
+                                        >
+                                        <span class="chip-id"
+                                            >Microsoft</span
+                                        >
+                                    </div>
+                                    <span class="chip-status">VERIFIED</span>
+                                </div>
+
+                                <div class="data-chip">
+                                    <div class="chip-main">
+                                        <span class="chip-title"
+                                            >CCNA: Introduction to Networks</span
+                                        >
+                                        <span class="chip-id"
+                                            >Cisco Networking Academy</span
+                                        >
+                                    </div>
+                                    <span class="chip-status">VERIFIED</span>
+                                </div>
+
+                                <div class="data-chip">
+                                    <div class="chip-main">
+                                        <span class="chip-title"
+                                            >Data Modeling</span
+                                        >
+                                        <span class="chip-id"
+                                            >Fundação Bradesco</span
+                                        >
+                                    </div>
+                                    <span class="chip-status">VERIFIED</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-wrapper">
+                        <h3 class="section-label">[EDUCATION]</h3>
+
+                        <div class="timeline-card">
+                            <span class="timeline-date">2026 — PRESENT</span>
+                            <div class="timeline-head">
+                                <h4>Associate Degree in Systems Analysis and Development</h4>
+                                <span>UNOESTE</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-card">
+                            <span class="timeline-date">COMPLETED</span>
+                            <div class="timeline-head">
+                                <h4>Technical Degree in Systems Development</h4>
+                                <span>SENAI</span>
+                            </div>
+                        </div>
+
+                        <h3 class="section-label">[PROFESSIONAL BACKGROUND]</h3>
+
+                        <div class="timeline-card">
+                            <span class="timeline-date">2025 — PRESENT</span>
+                            <div class="timeline-head">
+                                <h4>Fullstack Developer Jr.</h4>
+                                <span>INTEGRALE GESTÃO EMPRESARIAL</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section id="stacks" class="stacks-section">
+            <div class="ambient-glow glow-purple"></div>
+            <div class="ambient-glow glow-cyan"></div>
+
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">TECH STACK</h1>
+                    <div class="title-decoration"></div>
+                </div>
+
+                <div class="stack-group">
+                    <h2 class="category-title">
+                        LANGUAGES
+                        <span class="category-count"
+                            >{techStack.languages.length}</span
+                        >
+                    </h2>
+                    <div class="tech-grid">
+                        {
+                            techStack.languages.map((tech, index) => (
+                                <div
+                                    class="tech-card lang-border"
+                                    style={`animation-delay: ${index * 100}ms`}
+                                >
+                                    <div class="icon-wrapper">
+                                        <img
+                                            src={tech.icon}
+                                            alt={tech.name}
+                                            class="tech-icon"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    <div class="tech-info">
+                                        <span class="tech-name">
+                                            {tech.name}
+                                        </span>
+                                        <span class="tech-role">
+                                            {tech.role}
+                                        </span>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+
+                <div class="stack-group">
+                    <h2 class="category-title">
+                        FRAMEWORKS & LIBS
+                        <span class="category-count"
+                            >{techStack.frameworks.length}</span
+                        >
+                    </h2>
+                    <div class="tech-grid">
+                        {
+                            techStack.frameworks.map((tech, index) => (
+                                <div
+                                    class="tech-card frame-border"
+                                    style={`animation-delay: ${index * 100}ms`}
+                                >
+                                    <div class="icon-wrapper">
+                                        <img
+                                            src={tech.icon}
+                                            alt={tech.name}
+                                            class="tech-icon"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    <div class="tech-info">
+                                        <span class="tech-name">
+                                            {tech.name}
+                                        </span>
+                                        <span class="tech-role">
+                                            {tech.role}
+                                        </span>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+
+                <div class="stack-group">
+                    <h2 class="category-title">
+                        AUTOMATION & LOW-CODE
+                        <span class="category-count"
+                            >{techStack.automation.length}</span
+                        >
+                    </h2>
+                    <div class="tech-grid">
+                        {
+                            techStack.automation.map((tech, index) => (
+                                <div
+                                    class="tech-card auto-border"
+                                    style={`animation-delay: ${index * 100}ms`}
+                                >
+                                    <div class="icon-wrapper">
+                                        <img
+                                            src={tech.icon}
+                                            alt={tech.name}
+                                            class="tech-icon"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    <div class="tech-info">
+                                        <span class="tech-name">
+                                            {tech.name}
+                                        </span>
+                                        <span class="tech-role">
+                                            {tech.role}
+                                        </span>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+
+                <div class="stack-group">
+                    <h2 class="category-title">
+                        TOOLS & PLATFORMS
+                        <span class="category-count"
+                            >{techStack.tools.length}</span
+                        >
+                    </h2>
+                    <div class="tech-grid">
+                        {
+                            techStack.tools.map((tech, index) => (
+                                <div
+                                    class="tech-card tool-border"
+                                    style={`animation-delay: ${index * 100}ms`}
+                                >
+                                    <div class="icon-wrapper">
+                                        <img
+                                            src={tech.icon}
+                                            alt={tech.name}
+                                            class="tech-icon"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    <div class="tech-info">
+                                        <span class="tech-name">
+                                            {tech.name}
+                                        </span>
+                                        <span class="tech-role">
+                                            {tech.role}
+                                        </span>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="ambient-glow glow-purple"></div>
+            <div class="ambient-glow glow-cyan"></div>
+
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">PROJECTS</h1>
+                    <div class="title-decoration"></div>
+                </div>
+
+                <div class="coming-soon-wrapper">
+                    <div class="terminal-window coming-soon-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control maximize"></span>
+                            </div>
+                            <div class="terminal-tab">deploy.sh</div>
+                        </div>
+                        <div class="terminal-body">
+                            <span class="code-line"><span class="user-path">gustavo@portfolio:~/projects$</span> ./fetch_repositories.sh</span>
+                            <span class="code-line system-msg">Connecting to the servers... [OK]</span>
+                            <span class="code-line system-msg">Compiling source code...</span>
+                            <div class="progress-container">
+                                <span class="progress-bar"></span>
+                                <span class="progress-text">Loading...</span>
+                            </div>
+                            <span class="code-line accent-text">&gt;&gt;&gt; STATUS: Coming soon... </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="ambient-glow glow-purple"></div>
+            <div class="ambient-glow glow-cyan"></div>
+
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">GET IN TOUCH</h1>
+                    <div class="title-decoration"></div>
+                </div>
+
+                <div class="contact-wrapper">
+                    <div class="unified-contact-box">
+                        
+                        <div class="contact-sidebar">
+                            <h2 class="sidebar-title">Let's connect.</h2>
+                            <p class="sidebar-desc">
+                                Whether it's for a new project, an opportunity, or just to exchange ideas about technology and automation.
+                            </p>
+
+                            <div class="sidebar-methods">
+                                <div class="s-method">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--neon-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    <span>gustavolara63719@gmail.com</span>
+                                </div>
+                                <div class="s-method">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--neon-purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                    <span>Jaú, SP - Brazil</span>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-social">
+                                <h3>Follow Me</h3>
+                                <div class="s-links">
+                                    <a href="https://github.com/gustavo-lara" target="_blank" rel="noopener noreferrer" class="s-btn github" aria-label="GitHub">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/gustavo-lara-26102006www/" target="_blank" rel="noopener noreferrer" class="s-btn linkedin" aria-label="LinkedIn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                    </a>
+                                    <a href="https://www.instagram.com/_gustavolara_/" target="_blank" rel="noopener noreferrer" class="s-btn instagram" aria-label="Instagram">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-form-area">
+                            <form id="contactForm" class="hub-form" action="#" method="POST">
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" id="name" name="name" placeholder="John Doe" required />
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="email">E-mail</label>
+                                        <input type="email" id="email" name="email" placeholder="john@example.com" required />
+                                    </div>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" id="subject" name="subject" placeholder="Project Proposal" required />
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" rows="4" placeholder="Hello, I'd like to talk about..." required></textarea>
+                                </div>
+
+                                <button type="submit" class="hub-submit-btn">
+                                    <span>Send Message</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
 	</main>
 </Layout>
+
+<script>
+    function initMailtoForm() {
+        const form = document.getElementById('contactForm') as HTMLFormElement | null;
+        
+        if (!form) return;
+
+        form.removeEventListener('submit', handleFormSubmit);
+        form.addEventListener('submit', handleFormSubmit);
+    }
+    function handleFormSubmit(e: Event) {
+        e.preventDefault();
+
+        const nameInput = document.getElementById('name') as HTMLInputElement | null;
+        const emailInput = document.getElementById('email') as HTMLInputElement | null;
+        const subjectInput = document.getElementById('subject') as HTMLInputElement | null;
+        const messageInput = document.getElementById('message') as HTMLTextAreaElement | null;
+
+        if (!nameInput || !emailInput || !subjectInput || !messageInput) return;
+
+        const name = nameInput.value;
+        const email = emailInput.value;
+        const subject = subjectInput.value;
+        const message = messageInput.value;
+
+        const targetEmail = 'gustavolara63719@gmail.com';
+
+        const mailtoSubject = encodeURIComponent(`[Portfólio] ${subject}`);
+        const bodyText = `Name: ${name}\nE-mail for reply: ${email}\n${message}`;
+        const mailtoBody = encodeURIComponent(bodyText);
+
+        const mailtoLink = `mailto:${targetEmail}?subject=${mailtoSubject}&body=${mailtoBody}`;
+        window.location.href = mailtoLink;
+    }
+
+    document.addEventListener('DOMContentLoaded', initMailtoForm);
+    document.addEventListener('astro:page-load', initMailtoForm);
+</script>

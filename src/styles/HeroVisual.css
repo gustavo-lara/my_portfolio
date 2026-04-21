@@ -4,7 +4,6 @@
     display: flex;
     align-items: center;
     padding-top: 80px;
-    overflow: hidden;
 }
 
 .hero-section::before {
